@@ -1,0 +1,73 @@
+---
+// import { generate } from 'astro-eleventy-img';
+import '@fontsource/barlow';
+import { generateImage } from 'astro-eleventy-img';
+
+import HomeLayout from '@/layouts/HomeLayout.astro';
+
+const img = await generateImage('public/assets/frontendmentorio-logo.svg', {
+  formats: ['svg'],
+});
+---
+
+<HomeLayout title='Challenge from Frontendmentor.io'>
+  <div class='hero'>
+    <img src={img.svg[0].url} alt="Frontendmentor.io 's logo" />
+    <div class='body'>
+      <span class='title'>Frontend Mentor Challenge</span>
+      <span class='short-desc'
+        >All Challenge that i took from <a
+          href='https://frontendmentor.io/'
+          target='_blank'>Frontend Mentor</a
+        >.</span
+      >
+    </div>
+  </div>
+</HomeLayout>
+
+<style lang='scss'>
+  $sm: 640px;
+  $md: 768px;
+  $lg: 1024px;
+  $xl: 1280px;
+
+  .hero {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 8px;
+
+    > img {
+      position: relative;
+      width: 8rem;
+      aspect-ratio: 1 / 1;
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      > span {
+        font-family: 'Barlow', sans-serif;
+      }
+
+      > span.title {
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      @media screen and (min-width: $sm) {
+        > span.title {
+          font-size: 36px;
+        }
+      }
+
+      > span.short-desc {
+        font-style: italic;
+      }
+    }
+  }
+</style>
