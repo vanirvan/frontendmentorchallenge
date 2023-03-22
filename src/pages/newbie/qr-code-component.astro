@@ -8,17 +8,15 @@ const qrImg = await generateImage(
     formats: ['webp'],
   }
 );
-
-const color = {
-  bg: '#d6e1f0',
-  cardBg: '#ffffff',
-};
 ---
 
 <ProjectLayout title='QR Code Component - Frontend Mentor Challenge'>
   <div class='container'>
     <div class='card'>
-      <img src={qrImg.webp[0].url} />
+      <img
+        src={qrImg.webp[0].url}
+        alt='QR Code that will take you to frontendmentor.io'
+      />
       <span class='title'
         >Improve your front-end skills by building projects</span
       >
