@@ -1,0 +1,77 @@
+---
+import ProjectLayout from '@/layouts/ProjectLayout.astro';
+import { generateImage } from 'astro-eleventy-img';
+
+const qrImg = await generateImage(
+  'public/assets/newbie/qr-code-component/img-qr.png',
+  {
+    formats: ['webp'],
+  }
+);
+
+const color = {
+  bg: '#d6e1f0',
+  cardBg: '#ffffff',
+};
+---
+
+<ProjectLayout title='QR Code Component - Frontend Mentor Challenge'>
+  <div class='container'>
+    <div class='card'>
+      <img src={qrImg.webp[0].url} />
+      <span class='title'
+        >Improve your front-end skills by building projects</span
+      >
+      <span class='paragraph'>
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </span>
+    </div>
+  </div>
+</ProjectLayout>
+
+<style lang='scss'>
+  // font-family: 'Outfit', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+  .container {
+    width: 100vw;
+    height: 100dvh;
+    background-color: #d6e1f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+
+    .card {
+      width: min-content;
+      background-color: white;
+      padding: 12px 12px 24px 12px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+
+      > img {
+        width: 16rem;
+        border-radius: 16px;
+      }
+
+      span {
+        text-align: center;
+      }
+
+      span.title {
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      span.paragraph {
+        font-size: 15px;
+        color: hsl(220, 15%, 55%);
+        text-align: center;
+      }
+    }
+  }
+</style>
