@@ -11,7 +11,7 @@ const qrImg = await generateImage(
 ---
 
 <ProjectLayout title='QR Code Component - Frontend Mentor Challenge'>
-  <div class='container'>
+  <main>
     <div class='card'>
       <img
         src={qrImg.webp[0].url}
@@ -25,14 +25,14 @@ const qrImg = await generateImage(
         the next level
       </span>
     </div>
-  </div>
+  </main>
 </ProjectLayout>
 
 <style lang='scss'>
   // font-family: 'Outfit', sans-serif;
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
-  .container {
+  main {
     width: 100vw;
     height: 100dvh;
     background-color: #d6e1f0;
